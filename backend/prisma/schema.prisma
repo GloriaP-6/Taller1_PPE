@@ -5,9 +5,17 @@
 
 generator client {
   provider = "prisma-client"
-  output   = "../generated/prisma"
+  output = "../src/generated/prisma"
 }
 
 datasource db {
   provider = "sqlite"
+}
+
+model Juego {
+  id        Int      @id @default(autoincrement())
+  nombre    String
+  imagen    String
+  categoria String
+  creadoEn  DateTime @default(now())
 }
